@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashflow</title>
+  </head>
+  <body>
+<!--<script type="module" src="/src/main.js"></script> -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app"></div>
+    <script>
+      const vm = Vue.createApp({
+        data(){
+          return {
+            text: "Hola vue"
+          };
+        },
+        // <div>{{ text }}</div> The double mustaches interpret the data as plain text
+        // to output real HTML, you will need to use the v-html directive
+        // Directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you
+        // may have guessed, they apply special reactive behavior to the rendered DOM. Here, we're basically saying
+        // "keep this element's inner HTML up-to-date with the rawHtml property on the current active instance."
+        template : `<div v-text="text"></div>`
+
+      }).mount("#app");
+      //console.log(vm.text); //"Hola vue"
+    </script>
+  </body>
+</html>
