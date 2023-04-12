@@ -1,32 +1,31 @@
 <template>
-    <Suspense>
-        <template #default>
-            <Home/>
-        </template>
-        <template #fallback>
-            <SplashScreen/>
-        </template>
-    </Suspense>
-    
+  <Suspense>
+    <template #default>
+      <Home />
+    </template>
+    <template #fallback>
+      <SplashScreen />
+    </template>
+  </Suspense>
 </template>
 
 <script>
-    import Home from './components/Home.vue'
-    import SplashScreen from './components/SplashScreen.vue'
-    import { defineAsyncComponent } from 'vue';
+//import Home from './components/Home.vue'
+import SplashScreen from "./pages/SplashScreen.vue";
+import { defineAsyncComponent } from "vue";
 
-    export default {
-        components: {
-            SplashScreen,
-            Home: defineAsyncComponent(() => {
-                return new Promise((resolve) => {
-                    setTimeout(() => {
-                    resolve(import("./components/Home.vue"));
-                    }, 2500);
-                });
-            }),
-        }
-    }
+export default {
+  components: {
+    SplashScreen,
+    Home: defineAsyncComponent(() => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(import("./pages/Home.vue"));
+        }, 2000);
+      });
+    }),
+  },
+};
 </script>
 
 <style>
@@ -42,4 +41,3 @@ body,
   --brand-blue: #0689b0;
 }
 </style>
-
