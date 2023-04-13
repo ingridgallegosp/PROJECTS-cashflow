@@ -4,10 +4,10 @@
       <Header></Header>
     </template>
     <template #resume>
-      <Resume></Resume>
+      <Resume />
     </template>
-    <template #movement>
-      <Movements></Movements>
+    <template #movements>
+      <Movements />
     </template>
   </Layout>
 </template>

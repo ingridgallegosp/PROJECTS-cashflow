@@ -1,6 +1,6 @@
 # Konomi - Cashflow App
 
-Konomi - a foreign word for "economy" in Japanese, a language with a rich cultural heritage 
+Konomi - a foreign word for "economy" in Japanese
 
 ## Recommended IDE Setup
 
