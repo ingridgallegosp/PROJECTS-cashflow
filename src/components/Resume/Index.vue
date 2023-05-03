@@ -1,6 +1,61 @@
 <template>
-  <main>Resume</main>
+    <main>
+        <label>{{ labelSelected }}</label>
+        <h1>{{ visualAmount }}</h1>
+    </main>
 </template>
+
+<script setup>
+import { computed, defineProps } from 'vue';
+
+/* const props = defineProps([
+    'label',
+    'amount'    
+]) */
+
+const props = defineProps({
+    label: {
+        type: Date,
+    },
+    generalLabel: String,
+    amount: {
+        type: Number,
+        default: null
+    },
+    totalAmount: Number,
+})
+
+const amountValue = props.amount;
+const totalAmountValue = props.totalAmount;
+
+const visualAmount = computed(() => {
+    if (amountValue != null) {
+        return amountValue
+    }
+    else {
+        return totalAmountValue
+    }
+})
+
+const labelValue = props.label;
+const generalLabelValue = props.generalLabel;
+
+const labelSelected = computed(() => {
+    if (labelValue != null) {
+        return labelValue
+    }
+    else {
+        return generalLabelValue
+    }
+})
+//---------------------
+const emit = defineEmits('label')
+
+//-probar con emitir label selected y label value a home para q los valores sean intecractivos---------------
+
+
+
+</script>
 
 <style scoped>
 main {

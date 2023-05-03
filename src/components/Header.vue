@@ -1,7 +1,7 @@
 <template>
   <header>
     <img @click="reload" src="../assets/cashflow-icon.svg" alt="logo" />
-    <h1><span>Konomi</span> CashFlow</h1>
+    <h1><span>Konomi</span> CashFlow App</h1>
   </header>
 </template>
 
